@@ -1,0 +1,39 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# cmdstandev
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+## Example
+
+
+```{r example}
+library(cmdstandev)
+stan_path <- system.file("examples/bernoulli.stan", package = "cmdstandev", mustWork = TRUE)
+data_path <- system.file("examples/bernoulli.data.json", package = "cmdstandev", mustWork = TRUE)
+
+# Compile Stan executable as in-memory R function
+bern <- cmdstan_model(file=stan_path)
+
+# Pass character vector of command-line arguments
+bern$cmdstan_main(c("sample", "data", paste0("file=",data_path)))
+
+# Read standard CmdStan CSVs using the existing cmdstanr functions
+cmdstan_fit <- cmdstanr::as_cmdstan_fit(file="output.csv")
+cmdstan_fit$summary()
+```
+
