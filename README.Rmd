@@ -22,12 +22,11 @@ knitr::opts_chunk$set(
 
 
 ```{r example}
-library(CmdStanHeaders)
 stan_path <- system.file("examples/bernoulli.stan", package = "CmdStanHeaders", mustWork = TRUE)
 data_path <- system.file("examples/bernoulli.data.json", package = "CmdStanHeaders", mustWork = TRUE)
 
 # Compile Stan executable as in-memory R function
-bern <- cmdstan_model(file=stan_path)
+bern <- CmdStanHeaders::cmdstan_model(file=stan_path)
 
 # Pass character vector of command-line arguments
 bern$cmdstan_main(c("sample", "data", paste0("file=",data_path)))
