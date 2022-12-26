@@ -15,7 +15,7 @@ libflags <- function() {
 #' @export
 cxxflags <- function() {
   paste(
-    paste0("-I", shQuote(system.file("include", package = "cmdstandev", mustWork = TRUE))),
+    paste0("-I", shQuote(system.file("include", package = "CmdStanHeaders", mustWork = TRUE))),
     paste0("-I", shQuote(system.file("include", package = "Rcpp", mustWork = TRUE))),
     paste0("-I", shQuote(system.file("include", package = "RcppEigen", mustWork = TRUE))),
     paste0("-I", shQuote(system.file("include", package = "RcppParallel", mustWork = TRUE))),

@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# cmdstandev
+# CmdStanHeaders
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -9,9 +9,9 @@
 ## Example
 
 ``` r
-library(cmdstandev)
-stan_path <- system.file("examples/bernoulli.stan", package = "cmdstandev", mustWork = TRUE)
-data_path <- system.file("examples/bernoulli.data.json", package = "cmdstandev", mustWork = TRUE)
+library(CmdStanHeaders)
+stan_path <- system.file("examples/bernoulli.stan", package = "CmdStanHeaders", mustWork = TRUE)
+data_path <- system.file("examples/bernoulli.data.json", package = "CmdStanHeaders", mustWork = TRUE)
 
 # Compile Stan executable as in-memory R function
 bern <- cmdstan_model(file=stan_path)
@@ -26,6 +26,6 @@ cmdstan_fit$summary()
 #> # A tibble: 2 × 10
 #>   variable   mean median    sd   mad      q5    q95  rhat ess_bulk ess_tail
 #>   <chr>     <dbl>  <dbl> <dbl> <dbl>   <dbl>  <dbl> <dbl>    <dbl>    <dbl>
-#> 1 lp__     -7.27  -7.00  0.769 0.344 -8.52   -6.75   1.00     483.     640.
-#> 2 theta     0.246  0.228 0.119 0.118  0.0876  0.468  1.00     383.     551.
+#> 1 lp__     -7.34  -6.97  0.906 0.306 -9.10   -6.75   1.01     404.     380.
+#> 2 theta     0.250  0.235 0.125 0.118  0.0654  0.483  1.02     243.     303.
 ```

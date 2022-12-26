@@ -7,7 +7,7 @@ cmdstan_model <- function(file = NULL, model_code = NULL) {
 
   cpp_to_compile <- paste(c(
     hpp,
-    readLines(system.file("include/main.cpp", package = "cmdstandev", mustWork = TRUE))
+    readLines(system.file("include/main.cpp", package = "CmdStanHeaders", mustWork = TRUE))
   ), collapse = "\n")
 
   env <- new.env()
