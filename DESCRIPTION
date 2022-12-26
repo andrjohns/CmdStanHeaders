@@ -1,4 +1,4 @@
-Package: cmdstandev
+Package: CmdStanHeaders
 Title: Blank
 Version: 0.0.0.9000
 Authors@R:
@@ -16,9 +16,10 @@ Imports:
     rapidjsonr,
     withr,
     V8
-LinkingTo: Rcpp, RcppEigen, BH, RcppParallel, sundialr,rapidjsonr
+LinkingTo: Rcpp, RcppEigen, BH, RcppParallel, sundialr, rapidjsonr
 URL: https://github.com/andrjohns/cmdstandev
 BugReports: https://github.com/andrjohns/cmdstandev/issues
 Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Remotes: andrjohns/sundialr@upgrade-611

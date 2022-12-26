@@ -13,9 +13,9 @@ libflags <- function() {
 }
 
 #' @export
-cxxflags <- function(collapse = TRUE) {
-  flags <- c(
-    paste0("-I", shQuote(system.file("", package = "cmdstandev", mustWork = TRUE))),
+cxxflags <- function() {
+  paste(
+    paste0("-I", shQuote(system.file("include", package = "cmdstandev", mustWork = TRUE))),
     paste0("-I", shQuote(system.file("include", package = "Rcpp", mustWork = TRUE))),
     paste0("-I", shQuote(system.file("include", package = "RcppEigen", mustWork = TRUE))),
     paste0("-I", shQuote(system.file("include", package = "RcppParallel", mustWork = TRUE))),
@@ -37,10 +37,4 @@ cxxflags <- function(collapse = TRUE) {
     "-Wno-unused-variable",
     "-Wno-unknown-warning-option"
   )
-
-  if (collapse) {
-    paste(flags, collapse = " ")
-  } else {
-    flags
-  }
 }
